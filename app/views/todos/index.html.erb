@@ -1,0 +1,16 @@
+<h1>Your todo list</h1>
+<% if @todos.empty? %>
+    <h1> Nice you have nothing to do </h1>
+<% else %>
+    
+    <% @todos.each do |todo| %>
+        <li>
+        <% todo.name %>
+        </li>
+<% end %>
+<%= link_to 'Show Todo', todo_path(todo) %>
+<%= link_to 'Add', new_todo_path %>
+<%= link_to 'Edit Todo', edit_todo_path(todo) %>
+<%= link_to 'Destroy Todo', todo, method: :delete %>
+<p>Find me in app/views/todos/index.html.erb</p>
+
